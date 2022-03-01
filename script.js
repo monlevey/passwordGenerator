@@ -1,5 +1,5 @@
 
-//  Specific names that are define the input over usage 
+//  Specific names that define the input over usage 
 const generateBtn = document.querySelector("#submit");
 const inputNumberCharacters = document.querySelector("#inputNumberCharacters");
 const displayNumberCharacters = document.querySelector("#spanNumberCharacters");
@@ -9,6 +9,7 @@ const inputNumber = document.getElementById('inputNumber');
 const inputSymbol = document.getElementById('inputSymbol');
 const textareaPassword = document.getElementById("password");
 const error = document.querySelector('.error');
+const blurOpenButton = document.querySelector('.open-button');
 
 //array each letter of alphabet so each is indexed
 const lowercaseSet = 'abcdefghijklmnopqrstuvwxyz';
@@ -25,11 +26,20 @@ displayNumberCharactersInSpan();
 //Form for password criteria should pop up
 function openForm() {
     document.getElementById("myForm").style.display = "block";
+ //When form has popped up turn open-button white 
+  if(display = "block") {
+      blurOpenButton.setAttribute("style", "background-color: white; color: white; box-shadow: white;");
   }
+}
 //Form for password criteria should close when close button is clicked
   function closeForm() {
     document.getElementById("myForm").style.display = "none";
+// when form is closed regular styles return
+    if(display = "block") {
+        blurOpenButton.setAttribute("style", "");
+    }
   }
+
 
 
 // on user changing range input change the display of spanNumberCharacters
@@ -73,7 +83,7 @@ generateBtn.addEventListener('click', function(event){
     if(confirmLowercase){
         charset = charset + lowercaseSet;
     }
-    if (confirmUppercase){
+    if(confirmUppercase){
         charset = charset + uppercaseSet;
     }
     if(confirmNumber){
