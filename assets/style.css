@@ -30,8 +30,6 @@
 /*Font family added using google fonts*/
 body {
   background-color: var(--paleblue);
-  background-image: url(../assets/images/jean-beller-RjfVzePmmfM-unsplash.jpg);
-  background-size:contain;
   background-repeat: repeat;
   align-items: center;
   justify-content: center;
@@ -44,17 +42,17 @@ body {
 header {
   padding: 30px;
   text-align: center;
-  background-color: var(--paleblue);
-  color: var(--purple);
+  background-color: var(--purple);
+  color: var(--white);
   font-size: x-large;
   font-family: 'Zen Tokyo Zoo', Georgia, 'Times New Roman', Times, serif;
   align-content: center;
-  /* background-image: url(../assets/images/jean-beller-RjfVzePmmfM-unsplash.jpg);
+  background-image: url(../assets/images/efe-kurnaz-RnCPiXixooY-unsplash.jpg);
   background-size:contain;
   background-repeat: repeat;
   align-items: center;
   justify-content: center;
-  align-items: stretch; */
+  align-items: stretch;
 }
 /* Ensure responsiveness for all devices */
 main {
@@ -177,4 +175,9 @@ footer {
   color: var(--purple);
 }
 
+@media screen and (min-width: 560px) {
+header {
+  font-size: xx-large;
+}
+} 
 
