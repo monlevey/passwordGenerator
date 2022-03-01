@@ -19,144 +19,162 @@
   --forestgreen: #1C3A13;
   --tangerine: #EC4E20;
   --rockmelon: #FEC0AA;
-  --olive: #84732B;
+  --darkblue: #1b126d;
 }
 
-*,
-*::before,
-*::after {
+*
+ {
   box-sizing: border-box;
+ }
+
+/*Font family added using google fonts*/
+body {
+  background-color: var(--paleblue);
+  background-image: url(../assets/images/jean-beller-RjfVzePmmfM-unsplash.jpg);
+  background-size:contain;
+  background-repeat: repeat;
+  align-items: center;
+  justify-content: center;
+  align-items: stretch;
+  font-family: 'Sanchez', 'Lucida Grande', Verdana, sans-serif;
+  margin:0%;
+}
+
+/* Centralised header with unique font */
+header {
+  padding: 30px;
+  text-align: center;
+  background-color: var(--paleblue);
+  color: var(--purple);
+  font-size: x-large;
+  font-family: 'Zen Tokyo Zoo', Georgia, 'Times New Roman', Times, serif;
+  align-content: center;
+  /* background-image: url(../assets/images/jean-beller-RjfVzePmmfM-unsplash.jpg);
+  background-size:contain;
+  background-repeat: repeat;
+  align-items: center;
+  justify-content: center;
+  align-items: stretch; */
+}
+/* Ensure responsiveness for all devices */
+main {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  
+}
+article {
+  background-color: var(--palepurple);
+  border-radius: 5px;
+  border-width: 5px;
+  box-shadow: rgba(0, 0, 0, 0.15) 5px 2px 10px 0px;
+  color: var(--green);
+  font-size: 18px;
+  padding: 30px 40px;
+  justify-content: center;
+  margin: 0 auto;
+
   
 }
 
-html,
-body,
-.wrapper {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+h2 {
+text-align: center;
 }
 
-body {
-  font-family: sans-serif;
-  background-color: var(--paleblue);
-}
-
-.wrapper {
-  padding-top: 30px;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-header {
-  text-align: center;
+/* Button used to open the password specification form - fixed position */
+.open-button { 
+  background-color: var(--blue);
+  color: var(--white);
   padding: 20px;
-  padding-top: 0px;
-  color: var(--lavender);
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
-.card {
-  background-color: var(--palepurple);
-  border-radius: 5px;
-  border-width: 1px;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
-  color: var(--green);
-  font-size: 18px;
-  margin: 0 auto;
-  max-width: 800px;
-  padding: 30px 40px;
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height:fit-content;
+  width: auto;
+  border: 5px solid var(--brightpink);
+  background-color: var(--white);
+  z-index: 9;
 }
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 100%;
+  height: auto;
+  padding: 10px 10px 10px 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #04AA6D;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+  
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+button:hover {
+  opacity: 30;
+}
+
 
 .card-header::after {
   content: " ";
-  display: block;
+  justify-content: center;
+  text-align: center;
   width: 100%;
   background: var(--paleblue);
   height: 2px;
 }
 
-.card-body {
-  min-height: 100px;
-}
-
-.card-footer {
-  text-align: center;
-}
-
-.card-footer::before {
-  content: " ";
-  display: block;
-  width: 100%;
-  background: #e7e9eb;
-  height: 2px;
-}
-
-.card-footer::after {
-  content: " ";
-  display: block;
-  clear: both;
-}
-
-.btn {
+ button {
   border: none;
   background-color: var(--blue);
   border-radius: 25px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
-    0px;
-  color: hsl(0, 0%, 100%);
-  display: inline-block;
+  color: var(--white);
   font-size: 22px;
   line-height: 22px;
-  margin: 16px 16px 16px 20px;
-  padding: 14px 34px;
   text-align: center;
-  cursor: pointer;
-}
+  cursor: grab;
+} 
 
-button[disabled] {
-  cursor: default;
-  background: var(--rockmelon);
-}
-
-.float-right {
-  float: right;
-}
-
-#password {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border: none;
-  display: block;
-  width: 100%;
-  padding-top: 15px;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-bottom: 85px;
-  font-size: 1.2rem;
+footer {
+  padding-top: 150px;
   text-align: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border: 2px dashed var(--midpurple);
-  border-radius: 6px;
-  resize: none;
-  overflow: hidden;
+  background: var(--paleblue);
+  color: var(--purple);
 }
 
-@media (max-width: 690px) {
-  .btn {
-    font-size: 1rem;
-    margin: 16px 0px 0px 0px;
-    padding: 10px 15px;
-  }
 
-  #password {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 500px) {
-  .btn {
-    font-size: 0.8rem;
-  }
-}

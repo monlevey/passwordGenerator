@@ -1,29 +1,32 @@
 
   
-let generateBtn = document.querySelector("#generate");
+const generateBtn = document.querySelector("#submit");
+const inputNumberCharacters = document.querySelector("#inputNumberCharacters");
+const spanNumberCharacters = document.querySelector("#spanNumberCharacters");
 
 
+//Form for password criteria should pop up
+function openForm() {
+    document.getElementById("myForm").style.display = "block";
+  }
+//Form for password criteria should close when close button is clicked
+  function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+  }
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", function (){
+// on user changing range input 
 
+// change the display of spanNumberCharacters
+inputNumberCharacters.addEventListener('input', function(event){
 
-
-//on button click - series of modals for password criteria
-    // Get the modal
-    // let modal = document.getElementById("myModal");
-
-// // Get the button that opens the modal
-// let btn = document.getElementById("myBtn");
-
-
+});
 
 
     //first prompt of password criteria is for length of characters 8 - 128
- window.prompt('How many characters does your password need? \n(Must be between 8 - 128)');
- return;
+ //window.prompt('How many characters does your password need? \n(Must be between 8 - 128)');
+ 
 
-// //answer should be
+
 // let numberCharacters = 8 
 // function checkCharacters() {
 //     window.confirm('Would you like your password ' + numberCharacters + 'characters long?');

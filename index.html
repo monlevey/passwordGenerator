@@ -6,33 +6,53 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" /> 
     <title>Password Generator</title>
     <link rel="stylesheet" href="../passwordGenerator/assets/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Palette+Mosaic&family=Qahiri&family=Sanchez&family=Zen+Tokyo+Zoo&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
   </head>
-  <body>
-    <div class="wrapper">
-        <header>
-          <h1>Password Generator</h1>
-        </header>
-        <div class="card">
-          <div class="card-header">
-            <h2>Generate a Password</h2>
-          </div>
-          <div class="card-body">
-            <textarea
-              readonly
-              id="password"
-              placeholder="Your Secure Password"
-              aria-label="Generated Password"
-            ></textarea>
-          </div>
-          <div class="card-footer">
-            <button id="generate" class="btn">Generate Password</button>
-          </div>
-        </div>
-      </div>
 
-    <script type="text/javascript" src="script.js">
-          </script>
-    
-    
+    <body>
+          <header>
+          <h1>Password Generator</h1>
+          </header>
+      <main>
+        <article>
+          <section class="card-header">
+            <h2>Generate a Password</h2>
+            <p>Select the type of password you require by clicking the button at the bottom of this page!</p>
+         
+            <button class="open-button" onclick="openForm()"> 
+              <p>Click Here</p> 
+              <p>to generate your new password</p>
+            </button>
+          </section>
+
+            <div class="form-popup" id="myForm">
+              <form action="/action_page.php" class="form-container">
+                  <h4>Login</h4>
+
+                  <form>
+                    <div>
+                      <label for="numberCharacter">Number of Characters Required</label>
+                      <input type="range" id="inputNumberCharacters"
+                            min="8" max="128"> <span id="spanNumberCharacters"></span>
+                    </div>
+                  </form>
+
+                  <div class="form-container">
+                  <button type="submit" class="btn" id="submit">SUBMIT</button>
+                  <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                  </div>
+                </form>
+            </div>
+        </article>
+
+      </main>
+
+      <footer>Created by Mon Levey</footer>
+
+       <script type="text/javascript" src="script.js"> </script>
+
     </body>
-    </html>
+</html>
