@@ -11,8 +11,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Palette+Mosaic&family=Qahiri&family=Sanchez&family=Zen+Tokyo+Zoo&display=swap" rel="stylesheet">
    
   </head>
-
+<!-- Semantic elements within the body to ensure accessibility -->
     <body>
+      <!-- Header with large title-->
           <header>
           <h1>Password Generator</h1>
           </header>
@@ -20,23 +21,45 @@
         <article>
           <section class="card-header">
             <h2>Generate a Password</h2>
-            <p>Select the type of password you require by clicking the button at the bottom of this page!</p>
+            <p>We create a random password that fits your specifications.</p>
          
             <button class="open-button" onclick="openForm()"> 
               <p>Click Here</p> 
               <p>to generate your new password</p>
             </button>
           </section>
-
+          <!-- Popup form that acts as a prompt responsive to mobile and desktop -->
             <div class="form-popup" id="myForm">
               <form action="/action_page.php" class="form-container">
-                  <h4>Login</h4>
+                  <h4>Password Criteria</h4>
 
                   <form>
+                    <!-- slider to identify password length in number of characters 8 - 128 -->
                     <div>
-                      <label for="numberCharacter">Number of Characters Required</label>
+                      <label for="numberCharacter">Number of Characters </label>
                       <input type="range" id="inputNumberCharacters"
                             min="8" max="128"> <span id="spanNumberCharacters"></span>
+                    </div>
+                    <!--  checkbox (to validate) criteria for type of characters: lowercase, uppercase, numeric, and/or special characters -->
+                    <div>
+                      <input type="checkbox" id="inputLowercase" name="lowercase"
+                             checked/>
+                      <label for="lowercase">Lowercase</label>
+                    </div>
+
+                    <div>
+                      <input type="checkbox" id="inputUppercase" name="uppercase"/>
+                      <label for="uppercase">Uppercase</label>
+                    </div>
+
+                    <div>
+                      <input type="checkbox" id="inputNumber" name="number"/>
+                      <label for="number">Numbers</label>
+                    </div>
+                   
+                    <div>
+                      <input type="checkbox" id="inputSymbol" name="symbol"/>
+                      <label for="symbols">Symbols</label>
                     </div>
                   </form>
 

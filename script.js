@@ -1,8 +1,23 @@
 
-  
+//  Specific names that are define the input over usage 
 const generateBtn = document.querySelector("#submit");
 const inputNumberCharacters = document.querySelector("#inputNumberCharacters");
-const spanNumberCharacters = document.querySelector("#spanNumberCharacters");
+const displayNumberCharacters = document.querySelector("#spanNumberCharacters");
+const inputLowercase = document.getElementById('inputLowercase');
+const inputUppercase = document.getElementById('inputUppercase');
+const inputNumber = document.getElementById('inputNumber');
+const inputSymbol = document.getElementById('inputSymbol');
+
+//array each letter of alphabet so each is indexed
+const lowercaseSet = 'abcdefghijklmnopqrstuvwxyz';
+const uppercaseSet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+//array each symbol
+const symbolSet = '<>.,*&^%$#@!?'
+//array each number
+const numberSet = '0123456789'
+
+
+displayNumberCharactersInSpan();
 
 
 //Form for password criteria should pop up
@@ -14,42 +29,80 @@ function openForm() {
     document.getElementById("myForm").style.display = "none";
   }
 
-// on user changing range input 
 
-// change the display of spanNumberCharacters
+// on user changing range input change the display of spanNumberCharacters
+function displayNumberCharactersInSpan(){
+    // identify slider value
+    const passwordLength = inputNumberCharacters.value;
+    //change text content of number of characters in span to match
+    displayNumberCharacters.textContent = passwordLength;
+}
+
+
+//change the number of characters slider 
 inputNumberCharacters.addEventListener('input', function(event){
+    displayNumberCharactersInSpan();
+});
+  
+// when I click on the SUBMIT button
+generateBtn.addEventListener('click', function(event){
+    console.log(event);
+    //let user select password criteria: 
+    // use password length input
+    const passwordLength = Number(inputNumberCharacters.value);
+
+    //use lowercase
+    const confirmLowercase = inputLowercase.checked;
+    console.log(confirmLowercase);
+    //use uppercase
+    const confimUppercase = inputUppercase.checked;
+    console.log(confimUppercase);
+   //use numbers
+   const confirmNumber = inputNumber.checked;
+   console.log(confirmNumber);
+    //use symbols
+    const confirmSymbol = inputSymbol.checked;
+    console.log(confirmSymbol);
+    
+    // When user has selected the options they want
+    if(confirmLowercase){
+        charset = charset + lowercaseSet;
+    }
+    if (confirmUppercase){
+        charset = charset + uppercaseSet;
+    }
+    if(confirmNumber){
+        charset = charset + numberSet;
+    }
+    if(confirmSymbol){
+        charset = charset + symbolSet;
+    }
+
+    console.log(charset);
+
+    // Number of characters characters to use
+    let password = '';
+    for (let i = 0; i < passwordLength; i++) {
+
+        // generate a random character from the selection
+        const randomIndex = Math.floor(Math.random() * charset.length);
+
+        const randomCharacter = charset[randomIndex];
+        // add character to the end of the previous character one at a time
+    }
+
+
+
+
 
 });
 
 
-    //first prompt of password criteria is for length of characters 8 - 128
- //window.prompt('How many characters does your password need? \n(Must be between 8 - 128)');
- 
-
-
-// let numberCharacters = 8 
-// function checkCharacters() {
-//     window.confirm('Would you like your password ' + numberCharacters + 'characters long?');
-//     console.log('numberCharacters');
-// }
-//  numberCharacters();
-// window.prompt('Would you like your password ' + numberCharacters + 'characters long?');
-
-//window.confirm;
-        //console.log(password.length); (use the .length parameter to specify how long the password needs to be)
-
-
-    //checkbox (to validate) criteria for type of characters: lowercase, uppercase, numeric, and/or special characters
-        //element.render() checkbox        
-    //identify password criteria options
-//console.log characterSpecifications
-
-    //link checkbox selections to each type of criteria
 
 //prompt if none of the criteria is selected then alert "one or more criteria must be selected"
 
 
-//let user select password criteria - use let for object
+
 
 //array each letter of alphabet so each is indexed
 //array each special character
