@@ -82,7 +82,7 @@ text-align: center;
 /* Button used to open the password specification form - fixed position */
 .open-button { 
   background-color: var(--blue);
-  color: var(--white);
+  color: var(--purple);
   padding: 20px;
   border: none;
   cursor: pointer;
@@ -90,6 +90,12 @@ text-align: center;
   align-items: center;
   justify-content: center;
   width: 100%;
+  font-family:'Zen Tokyo Zoo', Georgia, 'Times New Roman', Times, serif;
+  font-size: larger;
+  text-shadow: var(--yellow) 2px 0 10px;
+  border-color: var(--purple);
+  border-width: 3px;
+  box-shadow: 10px 5px 5px 2px var(--darkblue);
 }
 
 /* The popup form - hidden by default */
@@ -142,19 +148,20 @@ text-align: center;
   background-color: red;
 }
 
-/* Add some hover effects to buttons */
-button:hover {
-  opacity: 30;
-}
-
-
-.card-header::after {
-  content: " ";
-  justify-content: center;
+.text-area {
+  background-color: var(--paleyellow);
   text-align: center;
+  border-color: var(--midpink);
+  border-style: dotted;
+  padding: 5%;
+
+}
+textarea {
+  background-color: var(--paleyellow);
+  border-color: var(--paleyellow);
   width: 100%;
-  background: var(--paleblue);
-  height: 2px;
+  height: 100px;
+
 }
 
  button {
@@ -175,9 +182,19 @@ footer {
   color: var(--purple);
 }
 
+
+
 @media screen and (min-width: 560px) {
 header {
   font-size: xx-large;
+}
+
+.open-button {
+  font-size: xx-large;
+}
+
+textarea {
+  font-size: larger;
 }
 } 
 

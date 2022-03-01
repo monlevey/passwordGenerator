@@ -22,12 +22,19 @@
           <section class="card-header">
             <h2>Generate a Password</h2>
             <p>We create a random password that fits your specifications.</p>
-         
+            
+            <section class="text-area">
+              <textarea readonly id="password" placeholder="Your New Password"
+               aria-label="Generated Password">
+              </textarea>
+              <h3 class="error"> </h3>
+           </section>
+           
             <button class="open-button" onclick="openForm()"> 
               <p>Click Here</p> 
-              <p>to generate your new password</p>
             </button>
           </section>
+         
           <!-- Popup form that acts as a prompt responsive to mobile and desktop -->
             <div class="form-popup" id="myForm">
               <form action="/action_page.php" class="form-container">

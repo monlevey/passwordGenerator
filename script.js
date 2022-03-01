@@ -7,6 +7,8 @@ const inputLowercase = document.getElementById('inputLowercase');
 const inputUppercase = document.getElementById('inputUppercase');
 const inputNumber = document.getElementById('inputNumber');
 const inputSymbol = document.getElementById('inputSymbol');
+const textareaPassword = document.getElementById("password");
+const error = document.querySelector('.error');
 
 //array each letter of alphabet so each is indexed
 const lowercaseSet = 'abcdefghijklmnopqrstuvwxyz';
@@ -51,12 +53,14 @@ generateBtn.addEventListener('click', function(event){
     // use password length input
     const passwordLength = Number(inputNumberCharacters.value);
 
+    let charset = '';
+
     //use lowercase
     const confirmLowercase = inputLowercase.checked;
     console.log(confirmLowercase);
     //use uppercase
-    const confimUppercase = inputUppercase.checked;
-    console.log(confimUppercase);
+    const confirmUppercase = inputUppercase.checked;
+    console.log(confirmUppercase);
    //use numbers
    const confirmNumber = inputNumber.checked;
    console.log(confirmNumber);
@@ -64,6 +68,7 @@ generateBtn.addEventListener('click', function(event){
     const confirmSymbol = inputSymbol.checked;
     console.log(confirmSymbol);
     
+
     // When user has selected the options they want
     if(confirmLowercase){
         charset = charset + lowercaseSet;
@@ -78,7 +83,14 @@ generateBtn.addEventListener('click', function(event){
         charset = charset + symbolSet;
     }
 
-    console.log(charset);
+//prompt if none of the criteria is selected then alert "one or more criteria must be selected"
+    error.textContent = '';
+
+    if(!confirmLowercase && !confirmUppercase && !confirmNumber && !confirmSymbol){
+        error.textContent = "We can't create a password from thin air. CHECK A BOX PLEASE!";
+        return;
+    }
+
 
     // Number of characters characters to use
     let password = '';
@@ -89,28 +101,14 @@ generateBtn.addEventListener('click', function(event){
 
         const randomCharacter = charset[randomIndex];
         // add character to the end of the previous character one at a time
+    password = password + randomCharacter;
     }
+    console.log(password);
 
+    // then password is displayed as an alert or in text on the box window
 
-
-
+    textareaPassword.textContent = password;
 
 });
 
 
-
-//prompt if none of the criteria is selected then alert "one or more criteria must be selected"
-
-
-
-
-//array each letter of alphabet so each is indexed
-//array each special character
-//array each number
-
-//if uppercase is selected math.random > 0.5 (give a percentage of the numberCharacters) .toUppercase which will uppercase a random portion of the characters
-//math.random to 
-//run random password generator to match specific criteria
-
-
-// then password is displayed as an alert or in text on the box window
