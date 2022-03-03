@@ -19,7 +19,7 @@ const symbolSet = '<>.,*&^%$#@!?'
 //array each number
 const numberSet = '0123456789'
 
-
+// call the function to display slider information
 displayNumberCharactersInSpan();
 
 
@@ -102,7 +102,7 @@ generateBtn.addEventListener('click', function(event){
     }
 
 
-    // Number of characters characters to use
+    // Number of characters to use
     let password = '';
     for (let i = 0; i < passwordLength; i++) {
 
