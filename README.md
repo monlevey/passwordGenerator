@@ -6,9 +6,9 @@ The project aims to provide the user with a randomly generated password. The pas
 ***
 
 ## Demo
-![Monique Portfolio Website Demo](Password Generator.gif) 
+![Monique's Password Generator Demo](PasswordGenerator.gif) 
 
-My Portfolio website will render as the above gif displays. It is reponsive to both mobile and desktop viewing.
+My Password Generator website will render as the above gif displays. It is reponsive to both mobile and desktop viewing.
 
 
 ## Live Link
