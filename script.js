@@ -97,7 +97,7 @@ generateBtn.addEventListener('click', function(event){
     error.textContent = '';
 
     if(!confirmLowercase && !confirmUppercase && !confirmNumber && !confirmSymbol){
-        error.textContent = "We can't create a password from thin air. CHECK A BOX PLEASE!";
+        error.textContent = "We cannot create a password from thin air. CHECK A BOX PLEASE!";
         return;
     }
 
